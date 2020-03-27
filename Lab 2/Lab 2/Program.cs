@@ -2,11 +2,16 @@
 
 namespace Lab_2
 {
-    class Program
+    class Programa
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+
+            Espotifai cancion = new Espotifai();  
+            string cancionnueva = "";
+            cancionnueva = cancion.Pedircancion();
+            Console.WriteLine(cancionnueva);
         }
     }
+
 }
