@@ -6,11 +6,8 @@ namespace Lab_2
     {
         static void Main()
         {
+            Espotifai inicio = new Espotifai();
 
-            Espotifai cancion = new Espotifai();  
-            string cancionnueva = "";
-            cancionnueva = cancion.Pedircancion();
-            Console.WriteLine(cancionnueva);
         }
     }
 
