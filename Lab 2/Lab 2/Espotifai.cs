@@ -6,14 +6,13 @@ namespace Lab_2
 {
     class Espotifai
     {
-
         public List<Cancion> canciones;
         public Espotifai()
         {
-            canciones = new List<Cancion>();
-            
+            canciones = new List<Cancion>();           
         }
         public bool AgregarCancion(Cancion cancion)
+         
         {
             for (int i = 0; i < canciones.Count; i++)
             {
@@ -31,5 +30,6 @@ namespace Lab_2
                 for (int i = 0; i < canciones.Count; i++)
                     Console.WriteLine(canciones[i].Informacion());
         }
+        
     }
 }
