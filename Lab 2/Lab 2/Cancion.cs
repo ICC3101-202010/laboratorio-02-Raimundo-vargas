@@ -6,10 +6,11 @@ namespace Lab_2
 {
     class Cancion
     {
-        private string nombre;
-        private string album;
-        private string artista;
-        private string genero;
+        internal string valor;
+        public string nombre;
+        public string album;
+        public string artista;
+        public string genero;
         public Cancion(string nombrestr, string albumstr, string artistastr, string generostr)
         {
             nombre = nombrestr;
