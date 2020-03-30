@@ -8,10 +8,12 @@ namespace Lab_2
     {
         public List<Cancion> canciones;
         public List<Cancion> listaespecifica;
+        public List<Playlist> listaplaylist;
         public Espotifai()
+        
         {
-            canciones = new List<Cancion>();
-            listaespecifica = new List<Cancion>();
+            canciones = new List<Cancion>();           
+            listaplaylist = new List<Playlist>();
         }
         public bool AgregarCancion(Cancion cancion)
          
@@ -34,7 +36,8 @@ namespace Lab_2
         }
         public List<Cancion> CancionesPorCriterio(String criterio, String valor)
         {
-            switch(criterio)
+            listaespecifica = new List<Cancion>();
+            switch (criterio)
             {
                 case "album":
                     for (int i = 0; i < canciones.Count; i++)
@@ -45,8 +48,7 @@ namespace Lab_2
                         }
                     }
                     for (int i = 0; i < listaespecifica.Count; i++)
-                        Console.WriteLine(listaespecifica[i].Informacion());
-                    listaespecifica.Clear();
+                        Console.WriteLine(listaespecifica[i].Informacion());                  
                     break;
                 case ("nombre"):
                     for (int i = 0; i < canciones.Count; i++)
@@ -57,8 +59,7 @@ namespace Lab_2
                         }
                     }
                     for (int i = 0; i < listaespecifica.Count; i++)
-                        Console.WriteLine(listaespecifica[i].Informacion());
-                    listaespecifica.Clear();
+                        Console.WriteLine(listaespecifica[i].Informacion());                
                     break;
                 case ("genero"):
                     for (int i = 0; i < canciones.Count; i++)
@@ -69,8 +70,7 @@ namespace Lab_2
                         }
                     }
                     for (int i = 0; i < listaespecifica.Count; i++)
-                        Console.WriteLine(listaespecifica[i].Informacion());
-                    listaespecifica.Clear();
+                        Console.WriteLine(listaespecifica[i].Informacion());                    
                     break;
                 case ("artista"):
                     for (int i = 0; i < canciones.Count; i++)
@@ -81,14 +81,54 @@ namespace Lab_2
                         }
                     }
                     for (int i = 0; i < listaespecifica.Count; i++)
-                        Console.WriteLine(listaespecifica[i].Informacion());
-                    listaespecifica.Clear();
+                        Console.WriteLine(listaespecifica[i].Informacion());                    
                     break;
                 default:
                     Console.WriteLine("Error");
                     break;
             }
             return listaespecifica;
+        }       
+        public bool GenerarPlaylist(String criterio, String valorCriterio, String nombrePlaylist)
+        {
+            string existencia = "";
+            for (int i = 0; i < listaplaylist.Count; i++)
+            {
+                if (nombrePlaylist == listaplaylist[i].nombreplaylist)
+                {
+
+                    existencia = "F";
+
+                }
+                else
+                    continue;
+            }
+            if (existencia == "")
+            {
+                List<Cancion> f = CancionesPorCriterio(criterio, valorCriterio);
+                Playlist listaplaylistprueba = new Playlist(nombrePlaylist, f);
+                listaplaylist.Add(listaplaylistprueba);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("La playlist no se pudo hacer por que ya hay una PlaYlist con ese nombre, por favor intentar denuevo");
+                Console.WriteLine(" ");
+                return false;
+            }        
+        }
+        public string VerMisPlaylists()
+        {            
+            string vermisplaylist = "";
+            for (int i = 0; i < listaplaylist.Count; i++)
+            {
+                vermisplaylist += "Nombre de la playlist: \n";
+                vermisplaylist += listaplaylist[i].nombreplaylist;
+                vermisplaylist += "\n";
+                vermisplaylist += listaplaylist[i].VerInformacionplaylist();
+                vermisplaylist += "\n";
+            }
+            return vermisplaylist;
         }
     }
 }
