@@ -10,7 +10,6 @@ namespace Lab_2
         public List<Cancion> listaespecifica;
         public List<Playlist> listaplaylist;
         public Espotifai()
-        
         {
             canciones = new List<Cancion>();           
             listaplaylist = new List<Playlist>();
@@ -47,6 +46,8 @@ namespace Lab_2
                             listaespecifica.Add(canciones[i]);
                         }
                     }
+                    Console.WriteLine("Su Playlist es:");
+                    Console.WriteLine("");
                     for (int i = 0; i < listaespecifica.Count; i++)
                         Console.WriteLine(listaespecifica[i].Informacion());                  
                     break;
@@ -58,6 +59,8 @@ namespace Lab_2
                             listaespecifica.Add(canciones[i]);
                         }
                     }
+                    Console.WriteLine("Su Playlist es:");
+                    Console.WriteLine("");
                     for (int i = 0; i < listaespecifica.Count; i++)
                         Console.WriteLine(listaespecifica[i].Informacion());                
                     break;
@@ -69,6 +72,8 @@ namespace Lab_2
                             listaespecifica.Add(canciones[i]);
                         }
                     }
+                    Console.WriteLine("Su Playlist es:");
+                    Console.WriteLine("");
                     for (int i = 0; i < listaespecifica.Count; i++)
                         Console.WriteLine(listaespecifica[i].Informacion());                    
                     break;
@@ -80,6 +85,8 @@ namespace Lab_2
                             listaespecifica.Add(canciones[i]);
                         }
                     }
+                    Console.WriteLine("Su Playlist es:");
+                    Console.WriteLine("");
                     for (int i = 0; i < listaespecifica.Count; i++)
                         Console.WriteLine(listaespecifica[i].Informacion());                    
                     break;

@@ -23,7 +23,7 @@ namespace Lab_2
             {
                 string variable = "";
                 for (int i = 0; i < playlists.Count; i++)
-                    variable+= (playlists[i].Informacion());
+                    variable += (playlists[i].Informacion());
                     variable += "\n";
                 return variable;
             }

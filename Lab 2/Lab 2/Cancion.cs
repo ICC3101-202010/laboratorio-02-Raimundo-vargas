@@ -6,7 +6,6 @@ namespace Lab_2
 {
     class Cancion
     {
-        internal string valor;
         public string nombre;
         public string album;
         public string artista;
@@ -20,7 +19,7 @@ namespace Lab_2
         }
         public string Informacion()
         {
-            string info = (" genero: " + genero + "," + " artista: " + artista + "," + " album: " + album + "," + " nombre: " + nombre);
+            string info = (" genero: " + genero + "," + " artista: " + artista + "," + " album: " + album + "," + " nombre: " + nombre + "\n");
             return info;
         }
     }
